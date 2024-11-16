@@ -1,45 +1,41 @@
 # CS639-Team4
 # HealthyEats App
 
-HealthyEats is a mobile application designed to help users monitor and manage their daily diet. By combining modern technology and user-centric design, it aims to promote healthier eating habits and improve overall quality of life.
-
-## Features
-
-- **User-Friendly Onboarding**: Simple registration and login using Firebase Authentication.
-- **Food Logging**:
-  - Log detailed food information (name, quantity, etc.).
-  - Retrieve nutritional data via USDA FoodData Central API.
-  - Securely store logs in Firestore with automatic timestamps.
-- **Nutritional Analysis**:
-  - Calculate daily intake of calories, proteins, carbohydrates, and fats.
-  - Visualize data through easy-to-read charts.
-- **Personalized Recommendations**:
-  - Provide tailored dietary advice based on user logs.
-
-## Technical Architecture
-
-- **Frontend**: Built with Kotlin for a smooth Android experience.
-- **Backend**:
-  - Firebase Authentication for secure user access.
-  - Firestore for database storage.
-  - External APIs for nutritional data retrieval.
-- **Real-Time Updates**: Powered by ViewModel and LiveData for efficient state management.
-
-## Why HealthyEats?
-
-HealthyEats simplifies diet management by offering:
-- Easy and secure food logging.
-- Insightful nutritional analysis with visual representations.
-- Actionable dietary recommendations for better health.
-
-With its intuitive design and reliable functionality, HealthyEats is a comprehensive tool for improving dietary habits.
-
-## Future Enhancements
-
-- Add meal planning and goal tracking features.
-- Support multi-language capabilities.
-- Expand database integration for global food items.
+HealthyEats is a simple and practical mobile app that helps you manage your diet and make healthier eating choices. It’s designed to make food tracking, nutritional analysis, and personalized recommendations easy and accessible for everyone.
 
 ---
 
-Feel free to customize or add sections based on your specific needs!
+## Features
+
+### Easy Food Logging
+Log what you eat with details like food name, quantity, and units. The app automatically retrieves nutritional information using the USDA FoodData Central API and securely stores your data in Firestore.
+
+### Nutritional Analysis
+Get an instant breakdown of your daily calorie, protein, carb, and fat intake. The app visualizes this information in clear, easy-to-read charts so you can see how you’re doing at a glance.
+
+### Personalized Recommendations
+Based on your food logs, HealthyEats offers tailored suggestions to help you make better dietary choices, including portion sizes and healthier alternatives.
+
+---
+
+## How It Works
+
+1. **Sign Up**: Create an account with your email and password.
+2. **Log Your Meals**: Input your meals and let the app handle the rest.
+3. **Analyze**: View charts and reports of your nutrition intake.
+4. **Improve**: Follow personalized recommendations to eat better.
+
+---
+
+## Technical Overview
+
+- **Frontend**: Built with Kotlin for Android.
+- **Backend**: Firebase Authentication for secure login and Firestore for data storage.
+- **APIs**: Uses USDA FoodData Central to fetch detailed nutritional data.
+- **Real-Time Updates**: Powered by ViewModel and LiveData to ensure smooth and efficient data handling.
+
+---
+
+## Why Choose HealthyEats?
+
+HealthyEats is all about making healthy living easy. Whether you're just starting to track your diet or looking for ways to improve your eating habits, the app provides all the tools you need in one place. It’s simple, accurate, and designed to fit into your everyday life.
