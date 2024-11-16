@@ -31,8 +31,6 @@ Based on your food logs, HealthyEats offers tailored suggestions to help you mak
 
 - **Frontend**: Built with Kotlin for Android.
 - **Backend**: Firebase Authentication for secure login and Firestore for data storage.
-- **APIs**: Uses USDA FoodData Central to fetch detailed nutritional data.
-- **Real-Time Updates**: Powered by ViewModel and LiveData to ensure smooth and efficient data handling.
 
 ---
 
