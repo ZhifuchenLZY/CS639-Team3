@@ -1,4 +1,4 @@
-# CS639-Team4
+# CS639-Team3
 # HealthyEats App
 
 HealthyEats is a simple and practical mobile app that helps you manage your diet and make healthier eating choices. It’s designed to make food tracking, nutritional analysis, and personalized recommendations easy and accessible for everyone.
