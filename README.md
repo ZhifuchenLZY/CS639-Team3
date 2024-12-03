@@ -36,7 +36,7 @@ Based on your food logs, HealthyEats offers tailored suggestions to help you mak
 
 ### User Interface
 
-| <img src="assets/1732322996616.png" width="30%"></img><br>Login | <img src="assets/1732322996616.png" width="30%"></img><br/>Sign Up |
+| <img src="assets/1732322996616.png" width="30%"></img><br>Login | <img src="assets/1733152753646.png" width="30%"></img><br/>Sign Up |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="./assets/1732323867127.png" width="30%"></img><br/>Log meals | <img src="assets/1732322478835.png" width="30%"></img><br/>Analyze |
 | <img src="assets/1732322613494.png" width="30%"></img><br/>Improve |                                                              |
