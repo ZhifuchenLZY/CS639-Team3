@@ -17,6 +17,7 @@ Get an instant breakdown of your daily calorie, protein, carb, and fat intake. T
 Based on your food logs, HealthyEats offers tailored suggestions to help you make better dietary choices, including portion sizes and healthier alternatives.
 
 ---
+<<<<<<< HEAD
 
 ## How It Works
 
@@ -96,3 +97,5 @@ Recommend entity is created by web api and stored in firestore.
 ## Why Choose HealthyEats?
 
 HealthyEats is all about making healthy living easy. Whether you're just starting to track your diet or looking for ways to improve your eating habits, the app provides all the tools you need in one place. It’s simple, accurate, and designed to fit into your everyday life.
+=======
+>>>>>>> 1e2968930351141348d8387b2f17c704d870356e
