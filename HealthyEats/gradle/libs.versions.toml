@@ -1,5 +1,8 @@
 [versions]
 agp = "8.6.0"
+chartscomposelibrary = "1.0.0"
+coilCompose = "<latest_version>"
+coilComposeVersion = "2.4.0"
 kotlin = "1.9.0"
 coreKtx = "1.15.0"
 junit = "4.13.2"
@@ -11,10 +14,14 @@ composeBom = "2024.04.01"
 material = "1.12.0"
 fragmentKtx = "1.8.5"
 material3 = "1.1.2"
+mpandroidchartVersion = "v3.1.0"
 navigationCompose = "2.8.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+chartscomposelibrary = { module = "com.github.tvbarthel:ChartsComposeLibrary", version.ref = "chartscomposelibrary" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+coil-compose-v240 = { module = "io.coil-kt:coil-compose", version.ref = "coilComposeVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -32,6 +39,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+philjay-mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchartVersion" }
+tehras-charts = { module = "com.github.tehras:charts" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

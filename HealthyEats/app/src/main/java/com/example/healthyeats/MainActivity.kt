@@ -41,20 +41,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun DietScreen() {
-    Text(text = "Diet Screen")
-}
 
-@Composable
-fun AnalysisScreen() {
-    Text(text = "Analysis Screen")
-}
-
-@Composable
-fun RecommendScreen() {
-    Text(text = "Recommend Screen")
-}
 
 sealed class Screen(val route: String, val icon: Int, val titleResId: Int) {
     object Home : Screen("Diet", R.drawable.ic_diet, R.string.diet)
@@ -111,7 +98,6 @@ fun BottomNavigationBar(navController: NavHostController) {
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
-
     Scaffold(
         bottomBar = { BottomNavigationBar(navController = navController) }
     ) { innerPadding ->
