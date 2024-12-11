@@ -1,5 +1,7 @@
 package com.example.healthyeats
 
+import java.time.LocalDate
+
 data class Diet(
     val id: Int,                // Unique identifier for the diet item
     val name: String,           // The name of the food item or meal
@@ -8,5 +10,6 @@ data class Diet(
     val protein: Double,        // Protein content in grams
     val fat: Double,            // Fat content in grams
     val carbohydrate: Double,   // Carbohydrate content in grams
-    val others: String          // Any other relevant information about the food item
+    val createAt: LocalDate,          // date
+    val type: String
 )

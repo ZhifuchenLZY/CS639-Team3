@@ -98,6 +98,7 @@ fun BottomNavigationBar(navController: NavHostController) {
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
+    val dietViewModel = DietViewModel()
     Scaffold(
         bottomBar = { BottomNavigationBar(navController = navController) }
     ) { innerPadding ->
@@ -106,7 +107,7 @@ fun MainScreen() {
             startDestination = Screen.Home.route,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screen.Home.route) { DietScreen() }
+            composable(Screen.Home.route) { DietScreen(dietViewModel) }
             composable(Screen.Settings.route) { AnalysisScreen() }
             composable(Screen.Profile.route) { RecommendScreen() }
         }

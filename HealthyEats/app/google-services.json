@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "856790532088",
+    "project_id": "healthyeats-bdce1",
+    "storage_bucket": "healthyeats-bdce1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856790532088:android:618d6a3a2a4bb7be04200d",
+        "android_client_info": {
+          "package_name": "com.example.healthyeats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBiTyUCEFcB482m2TNVL2uaFvCiO4b4Z8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

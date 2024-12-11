@@ -31,7 +31,7 @@ fun DietCardItem(
     icon: Int,
     title: String,
     items: List<String>,
-    onAddClick: () -> Unit,
+    onAddClick:  () -> Unit,
     onDeleteClick: () -> Unit
 ) {
     Card(

@@ -70,4 +70,24 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Import the BoM for the Firebase platform
+    implementation(platform(libs.firebase.bom))
+
+    // Add the dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation(libs.firebase.auth)
+
+    // Retrofit
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.com.squareup.retrofit2.converter.gson)
+
+    // OkHttp for HTTP client and interceptor for adding the access token
+    implementation(libs.com.squareup.okhttp3.okhttp)
+    implementation(libs.com.squareup.okhttp3.logging.interceptor)
+
+    // Optional: If you want to use Coroutines with Retrofit
+    implementation(libs.com.jakewharton.retrofit.retrofit2.kotlin.coroutines.adapter2)
+
+    implementation(libs.gson)
 }
