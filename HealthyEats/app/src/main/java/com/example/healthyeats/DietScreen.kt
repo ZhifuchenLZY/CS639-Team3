@@ -31,11 +31,7 @@ fun DietScreen() {
                     currentDate = newDate
                 },
                 onDateClick = {
-//                    coroutineScope.launch {
-//                        showDatePickerDialog(activity, currentDate) { selectedDate ->
-//                            currentDate = selectedDate
-//                        }
-//                    }
+
                 }
             )
         }
