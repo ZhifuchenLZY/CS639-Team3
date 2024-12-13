@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "856790532088",
-    "project_id": "healthyeats-bdce1",
-    "storage_bucket": "healthyeats-bdce1.firebasestorage.app"
+    "project_number": "940331352560",
+    "project_id": "makeitsoczf",
+    "storage_bucket": "makeitsoczf.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:856790532088:android:618d6a3a2a4bb7be04200d",
+        "mobilesdk_app_id": "1:940331352560:android:c0f34f8230f039c38a5d35",
         "android_client_info": {
           "package_name": "com.example.healthyeats"
         }
@@ -15,7 +15,26 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDBiTyUCEFcB482m2TNVL2uaFvCiO4b4Z8"
+          "current_key": "AIzaSyAit8npEtTVfoX5rU1prP7_NpidOcApPGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:940331352560:android:e90b8e1f3249e3618a5d35",
+        "android_client_info": {
+          "package_name": "com.example.makeitso"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAit8npEtTVfoX5rU1prP7_NpidOcApPGA"
         }
       ],
       "services": {

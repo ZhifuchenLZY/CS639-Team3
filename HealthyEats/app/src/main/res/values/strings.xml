@@ -27,4 +27,10 @@
     <string name="cancel">Cancel</string>
     <string name="client_id">674403ecb99a461cb7650568ae290f98</string>
     <string name="client_secret">80aa7622a33f42a5a18c4a7738f4b13b</string>
+    <string name="email_is_invalid">Email is inValid!</string>
+    <string name="password_mismatch_in_two_type">Password mismatch in two type.</string>
+    <string name="add_food">Add Food</string>
+    <string name="food">Food</string>
+    <string name="weight">Weight</string>
+    <string name="calories">Calories</string>
 </resources>

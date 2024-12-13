@@ -28,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import com.example.healthyeats.NutritionItem
 import com.example.healthyeats.R
 import com.example.healthyeats.ui.theme.HealthyEatsTheme
 
@@ -109,7 +110,10 @@ fun RecommendCard(cardItem: RecommendCardItem, onDeleteClick: () -> Unit) {
                     }
                 }
             }
+            Spacer(modifier = Modifier.height(8.dp))
+            Text("Hint: Unit of nutrition is g/100g.")
         }
+
     }
 }
 

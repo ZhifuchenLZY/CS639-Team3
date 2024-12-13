@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
@@ -20,6 +21,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -28,6 +30,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.healthyeats.ui.theme.HealthyEatsTheme
 
 class MainActivity : ComponentActivity() {
+    private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -40,7 +43,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 
 
 sealed class Screen(val route: String, val icon: Int, val titleResId: Int) {
@@ -97,8 +99,9 @@ fun BottomNavigationBar(navController: NavHostController) {
 
 @Composable
 fun MainScreen() {
+    //get mainViewModel created by MainActivity
+    val mainViewModel: MainViewModel = viewModel()
     val navController = rememberNavController()
-    val dietViewModel = DietViewModel()
     Scaffold(
         bottomBar = { BottomNavigationBar(navController = navController) }
     ) { innerPadding ->
@@ -107,9 +110,9 @@ fun MainScreen() {
             startDestination = Screen.Home.route,
             modifier = Modifier.padding(innerPadding)
         ) {
-            composable(Screen.Home.route) { DietScreen(dietViewModel) }
+            composable(Screen.Home.route) { DietScreen(mainViewModel) }
             composable(Screen.Settings.route) { AnalysisScreen() }
-            composable(Screen.Profile.route) { RecommendScreen() }
+            composable(Screen.Profile.route) { RecommendScreen(mainViewModel) }
         }
     }
 }
