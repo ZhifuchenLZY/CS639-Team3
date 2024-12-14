@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -87,5 +88,12 @@ dependencies {
     //mpandroidchart
     implementation(libs.philjay.mpandroidchart)
 
+    implementation(libs.kotlinx.coroutines.play.services)
+
     implementation(libs.gson)
+
+    // For proto DataStore
+    implementation(libs.androidx.datastore)
+    // Add the following line if you are using Kotlin and want to use coroutines
+    implementation(libs.androidx.datastore.core)
 }

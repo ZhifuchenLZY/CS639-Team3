@@ -28,18 +28,25 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.healthyeats.ui.theme.HealthyEatsTheme
+import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
     private val viewModel: MainViewModel by viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        //init firebase
+        FirebaseApp.initializeApp(applicationContext)
         setContent {
             HealthyEatsTheme {
                 Surface(color = MaterialTheme.colorScheme.background) {
                     MainScreen()
                 }
             }
+        }
+        val email = intent.getStringExtra("email")
+        if (email != null) {
+            viewModel.email = email
         }
     }
 }
@@ -101,6 +108,13 @@ fun BottomNavigationBar(navController: NavHostController) {
 fun MainScreen() {
     //get mainViewModel created by MainActivity
     val mainViewModel: MainViewModel = viewModel()
+
+    val filter = RecipeFilter()
+
+    //load default meal plan
+    mainViewModel.fetchRecipes(filter)
+
+
     val navController = rememberNavController()
     Scaffold(
         bottomBar = { BottomNavigationBar(navController = navController) }
@@ -111,7 +125,7 @@ fun MainScreen() {
             modifier = Modifier.padding(innerPadding)
         ) {
             composable(Screen.Home.route) { DietScreen(mainViewModel) }
-            composable(Screen.Settings.route) { AnalysisScreen() }
+            composable(Screen.Settings.route) { AnalysisScreen(mainViewModel) }
             composable(Screen.Profile.route) { RecommendScreen(mainViewModel) }
         }
     }

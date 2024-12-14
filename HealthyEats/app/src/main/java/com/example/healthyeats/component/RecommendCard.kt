@@ -27,19 +27,16 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.healthyeats.NutritionItem
+import com.example.healthyeats.MainViewModel
 import com.example.healthyeats.R
+import com.example.healthyeats.Recipe
 import com.example.healthyeats.ui.theme.HealthyEatsTheme
 
-data class RecommendCardItem(
-    val title: String,
-    val imageUrl: String,
-    val nutritionList: List<NutritionItem>
-)
 
 @Composable
-fun RecommendCard(cardItem: RecommendCardItem, onDeleteClick: () -> Unit) {
+fun RecommendCard(cardItem: Recipe, addToDiet: () -> Unit) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -64,10 +61,10 @@ fun RecommendCard(cardItem: RecommendCardItem, onDeleteClick: () -> Unit) {
                     style = MaterialTheme.typography.titleMedium,
                     modifier = Modifier.weight(1f)
                 )
-                IconButton(onClick = onDeleteClick) {
+                IconButton(onClick = addToDiet) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_delete),
-                        contentDescription = "Delete",
+                        painter = painterResource(id = R.drawable.ic_add),
+                        contentDescription = "Add to diet",
                         modifier = Modifier.size(24.dp)
                     )
                 }
@@ -82,7 +79,7 @@ fun RecommendCard(cardItem: RecommendCardItem, onDeleteClick: () -> Unit) {
             ) {
                 // Image
                 AsyncImage(
-                    model = cardItem.imageUrl,
+                    model = cardItem.image,
                     contentDescription = null,
                     modifier = Modifier
                         .weight(1f)
@@ -97,28 +94,28 @@ fun RecommendCard(cardItem: RecommendCardItem, onDeleteClick: () -> Unit) {
                     modifier = Modifier
                         .weight(1f)
                 ) {
-                    cardItem.nutritionList.forEach { item ->
+                    cardItem.nutrition[MainViewModel.KEY_NUTRIENTS]!!.forEach { item ->
                         Row(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(vertical = 4.dp),
                             horizontalArrangement = Arrangement.SpaceBetween
                         ) {
-                            Text(text = item.nutrition)
-                            Text(text = "%.2f".format(item.ideal))
+                            Text(text = item.name)
+                            Text(text = "%.1f".format(item.amount))
                         }
                     }
                 }
             }
             Spacer(modifier = Modifier.height(8.dp))
-            Text("Hint: Unit of nutrition is g/100g.")
+            Text("Hint: Nutrition is in g/100g. Calories in KCAL.", fontSize = 12.sp)
         }
 
     }
 }
 
 @Composable
-fun RecommendCardList(cardItems: List<RecommendCardItem>, onCardDelete: (Int) -> Unit) {
+fun RecommendCardList(cardItems: List<Recipe>, addToDiet: (Recipe) -> Unit) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -126,7 +123,7 @@ fun RecommendCardList(cardItems: List<RecommendCardItem>, onCardDelete: (Int) ->
             val cardItem = cardItems[index]
             RecommendCard(
                 cardItem = cardItem,
-                onDeleteClick = { onCardDelete(index) }
+                addToDiet = { addToDiet(cardItem) }
             )
         }
     }
@@ -136,34 +133,15 @@ fun RecommendCardList(cardItems: List<RecommendCardItem>, onCardDelete: (Int) ->
 @Composable
 fun RecommendCardPreview() {
     HealthyEatsTheme {
-        val sampleData = listOf(
-            RecommendCardItem(
-                title = "Sample Card 1",
-                imageUrl = "https://mmbiz.qpic.cn/sz_mmbiz_png/gtMexOnrtBZH5Gq7pvH0pmW9ENnXRo3iaNxFL3Iuq1onXQVvz1HNrcY4YIwt3zCSv9mmSicsWeFolJSPFq06J3Fw/640?wx_fmt=png&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1",
-                nutritionList = listOf(
-                    NutritionItem("Protein", 50.0f, 45.0f),
-                    NutritionItem("Carbo", 100.0f, 95.0f),
-                    NutritionItem("Fats", 70.0f, 75.0f),
-                    NutritionItem("Fiber", 25.0f, 20.0f)
-                )
-            ),
-            RecommendCardItem(
-                title = "Sample Card 2",
-                imageUrl = "https://example.com/image2.jpg",
-                nutritionList = listOf(
-                    NutritionItem("Vitamin A", 10.0f, 8.0f),
-                    NutritionItem("Vitamin C", 20.0f, 18.0f),
-                    NutritionItem("Calcium", 30.0f, 32.0f),
-                    NutritionItem("Iron", 15.0f, 12.0f)
-                )
-            )
-        )
-        RecommendCardList(
-            cardItems = sampleData,
-            onCardDelete = { index ->
-                // Handle delete action here
-                println("Deleting card at index $index")
-            }
-        )
+//        val sampleData = listOf(
+//
+//        )
+//        RecommendCardList(
+//            cardItems = sampleData,
+//            onCardDelete = { index ->
+//                // Handle delete action here
+//                println("Deleting card at index $index")
+//            }
+//        )
     }
 }

@@ -1,6 +1,5 @@
 package com.example.healthyeats.component
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,9 +16,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.healthyeats.NutritionItem
+import com.example.healthyeats.R
 
 
 // Composable function for a single row in the table
@@ -34,11 +35,8 @@ fun NutritionTableRow(item: NutritionItem) {
             .weight(1f)
             .widthIn(max = Int.MAX_VALUE.dp)
             .padding(4.dp)
-        Text(text = item.nutrition, modifier = textModifier)
-        Text(text = "%.2f".format(item.ideal), modifier = textModifier)
-        Text(text = "%.2f".format(item.real), modifier = textModifier)
-        val change = item.real - item.ideal
-        Text(text = "%.2f".format(change), modifier = textModifier)
+        Text(text = item.name, modifier = textModifier)
+        Text(text = "%.2f".format(item.amount), modifier = textModifier)
     }
 }
 
@@ -52,14 +50,11 @@ fun NutritionTable(nutritionList: List<NutritionItem>) {
         // Table Header
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.primary),
+                .fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
         ) {
-            Text("Nutrition", modifier = textModifier)
-            Text("Ideal (g)", modifier = textModifier)
-            Text("Real (g)", modifier = textModifier)
-            Text("Change (g)", modifier = textModifier)
+            Text(stringResource(R.string.nutrition), modifier = textModifier)
+            Text(stringResource(R.string.amount_g), modifier = textModifier)
         }
         Spacer(modifier = Modifier.height(8.dp))
         // Iterate over the list and create a row for each item
@@ -78,9 +73,9 @@ fun NutritionTable(nutritionList: List<NutritionItem>) {
 @Composable
 fun DefaultPreview() {
     val sampleData = listOf(
-        NutritionItem("Protein", 50.0f, 45.0f),
-        NutritionItem("Carbo", 100.0f, 95.0f),
-        NutritionItem("Fats", 70.0f, 75.0f)
+        NutritionItem("Protein",  45.0,"g"),
+        NutritionItem("Carbo", 95.0,"g"),
+        NutritionItem("Fats", 75.0,"g")
     )
     NutritionTable(nutritionList = sampleData)
 }
