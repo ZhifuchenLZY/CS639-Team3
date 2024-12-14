@@ -13,7 +13,4 @@ Log what you eat with details like food name, quantity, and units. The app autom
 ### Nutritional Analysis
 Get an instant breakdown of your daily calorie, protein, carb, and fat intake. The app visualizes this information in clear, easy-to-read charts so you can see how you’re doing at a glance.
 
-### Personalized Recommendations
-Based on your food logs, HealthyEats offers tailored suggestions to help you make better dietary choices, including portion sizes and healthier alternatives.
-
 [presentation](https://github.com/ZhifuchenLZY/CS639-Team3)
