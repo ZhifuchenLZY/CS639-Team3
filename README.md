@@ -15,3 +15,5 @@ Get an instant breakdown of your daily calorie, protein, carb, and fat intake. T
 
 ### Personalized Recommendations
 Based on your food logs, HealthyEats offers tailored suggestions to help you make better dietary choices, including portion sizes and healthier alternatives.
+
+[presentation](https://github.com/ZhifuchenLZY/CS639-Team3)
